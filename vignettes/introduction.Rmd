@@ -57,11 +57,112 @@ To utilise the left_xl function it expects two parameters - the first is the tex
 
 ```{r left_xl}
 #Grab a sub set of the data frame
-nhs_tibble
-NHSDataDictionaRy::left_xl()
+df <- nhs_tibble[10,]
+result <- NHSDataDictionaRy::left_xl(df$link_name, 22)
+print(result)
+class(result)
+
+```
+
+### right_xl() function
+
+This works the same way as the left function, but trims from the right of the text inward:
+```{r right_xl}
+#Grab a sub set of the data frame
+df <- nhs_tibble[10,]
+result <- NHSDataDictionaRy::right_xl(df$link_name, 23)
+print(result)
+class(result)
+
+```
+### mid_xl() function
+
+This function takes a slightly different approach and expects 3 input parameter, the first being the text to trim, the second being where to start trimming and the third parameter is the termination point i.e. where to stop the trimming of the string:
+```{r mid_xl}
+#Grab a sub set of the data frame
+df <- nhs_tibble[10,]
+original <- df$link_name
+#Original string
+result <- NHSDataDictionaRy::mid_xl(df$link_name, 12, 20)
+print(original); print(result)
+class(result)
+
+```
+
+### len_xl() function
+
+This is a simple, but useful function, as it gets the length of the string:
+```{r len_xl}
+#Grab a sub set of the data frame
+df <- nhs_tibble[10,]
+#Original string
+original <- df$link_name
+string_length <- NHSDataDictionaRy::len_xl(original)
+print(string_length)
+class(string_length)
 
 
 ```
 
 
+## Get all current hyperlinks from a webpage using linkScrapR
+
+This function can analyse a website and get all the current hyperlinks of a website. This function is used to produce the nhs_data_elements() function, as it calls this function to analyse all the current hyperlinks on the NHS Data Dictionary package, but my example shows an example of scraping the NHSR community website to access the links:
+
+```{r link_scrapeR}
+# Analyse all the links on a website
+website_url <- "https://nhsrcommunity.com/home/webinars/"
+results <- NHSDataDictionaRy::linkScrapeR(website_url)
+print(head(results, 20))
+
+```
+
+
+To navigate to the specific URL you can use the utils::browseURL command:
+```{r browse_url}
+#This opens the 18th result of the URL
+#browseURL(results$url[18])
+
+```
+
+# Working with the NHS R Data Dictionary lookup
+
+This package provides functionality for working with the nhs_data_elements extracted from the NHS Data Dictionary website. The two main useful function to extract elements are the tableR function and the xPathTextR function. These can work with the tibble returned to extract useful lookups.
+
+
+## tableR function (utilising scrapeR function)
+
+The scrapeR function is the workhorse, but the tableR wraps the results of the function in a nice tibble output. This will show you how to utilise the return tibble and to pass the function through the tableR to scrape a tibble to be utilised for lookups:
+
+```{r tableR}
+# Filter by a specific lookup required
+reduced_tibble <- 
+  dplyr::filter(nhs_tibble, link_name == "ACTIVITY TREATMENT FUNCTION CODE")
+
+#Use the tableR function to query the NHS Data Dictionary website and return the associate tibble
+
+treatment_function_lookup <- NHSDataDictionaRy::tableR(url=reduced_tibble$full_url,
+                          xpath = reduced_tibble$xpath_perm_code, 
+                          title = "NHS Hospital Activity Treatment Function Codes")
+
+# The query has returned results, if the url does not have a lookup table an error will be thrown
+
+print(head(treatment_function_lookup,10))
+  
+```
+
+## Using my lookup with NHS data 
+
+There are common lookups that are needed, and this is one such mapping between specialty code, to get the description of the specialty unit description. I will show an example with a made up data frame to illustrate the use case for these lookups and to have up to date lookups:
+
+```{r lookup_fields}
+act_aggregations <- data_frame(SpecCode = c(101,102,103),
+                             ActivityCounts = c(343, 354, 356), 
+                             Month = rep("May", 3))
+
+# Use dplyr to join patien
+
+
+  
+```
 
