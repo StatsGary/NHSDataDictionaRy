@@ -8,16 +8,14 @@
 #' @param title Unique name for the relevant HTML table that has been scraped
 #' @param add_zero_prefix Adds zero prefixes to certain codes that get converted by native functions
 #' @param ... Function forwarding to parent function to pass additional arguments to function
-#' @import dplyr xml2 rvest magrittr
 #' @importFrom magrittr %>%
+#' @importFrom dplyr tibble
 #' @include scrapeR.R
 #' @return
 #' @export
 #'
-#' @examples
-#' permitted_codes <- tableR(url= "https://datadictionary.nhs.uk/data_elements/abdominal_x-ray_performed_reason.html", xpath = '//*[@id="element_abdominal_x-ray_performed_reason.permitted_codes"]/div/div/table', title = "x-ray performed", add_zero_prefix = TRUE)
 
-tableR <- function(url, xpath, title, add_zero_prefix = FALSE, ...){
+tableR <- function(url, xpath, title="Not Specified", add_zero_prefix = FALSE, ...){
 
 
   if (is.null(url) | url == ""){

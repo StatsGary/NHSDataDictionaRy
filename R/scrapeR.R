@@ -9,14 +9,13 @@
 #' @param url Website address to connect to
 #' @param xpath Xpath obtained through inspecting the individual HTML elements
 #' @param ... Function to pass additional function forwarding options
-#' @import dplyr xml2 rvest magrittr
+#' @importFrom purrr pluck
+#' @importFrom rvest html_nodes html_table html_text
 #' @importFrom magrittr %>%
+#' @importFrom xml2 read_html
 #' @return
 #' @export
 #'
-#' @examples
-#' permitted_codes <- scrapeR(url= "https://datadictionary.nhs.uk/data_elements/abdominal_x-ray_performed_reason.html",
-#                             xpath = '//*[@id="element_abdominal_x-ray_performed_reason.permitted_codes"]/div/div/table')
 #
 scrapeR <- function(url, xpath, ...){
   xpath <- xpath
@@ -28,9 +27,9 @@ scrapeR <- function(url, xpath, ...){
 
 
   if (length(simple_lookup_table_scraped) > 0){
-    simple_lookup_table_scraped <- simple_lookup_table_scraped %>%
-      apply(., 2, function(x) gsub('\\s+', ' ', x)) %>%
-      as.data.frame()
+    simple_lookup_table_scraped <- simple_lookup_table_scraped
+    simple_lookup_table_scraped <- as.data.frame(apply(simple_lookup_table_scraped, 2, function(x) gsub('\\s+', ' ', x)))
+      # apply(., 2, function(x) gsub('\\s+', ' ', x)) %>%
   } else{
     warning(paste0("HTML Table does not exist for this URL.\n",
                 "Check the URL online at:\n", url,".", "\n"))

@@ -8,6 +8,8 @@ len_xl(text, ...)
 }
 \arguments{
 \item{text}{The text to get the numeric length of}
+
+\item{...}{Function forwarding to work with the base nchar method}
 }
 \value{
 

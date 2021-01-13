@@ -5,8 +5,9 @@
 #'
 #' @param url The link for the website
 #' @param xpath The xpath string derived by using the Inspect functionality in a web browser.
-#' @import dplyr xml2 rvest magrittr
+#' @importFrom rvest html_nodes html_table html_text
 #' @importFrom magrittr %>%
+#' @importFrom xml2 read_html
 #' @return
 #' @export
 #'

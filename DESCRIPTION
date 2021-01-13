@@ -4,15 +4,21 @@ Title: The package provides a common set of tools for working with the NHS Data 
 Version: 0.1.2
 Author: Gary Hutson
 Maintainer: Gary Hutson <g.hutson@nhs.net>
-Description: The package provides a common set of simplified web scraping tools for working with the NHS Data Dictionary
-    The intended usage is to access the data elements section of the NHS Data Dictionary to access key lookups
-    The benefits of having it in this package are that the lookups are the live lookups on the website and will not need to be maintained
-    This package was commissioned by the NHS-R community to provide this consistency of lookups
-License:MIT + file LICENSE
+Description: The package provides a common set of simplified web scraping tools for working with the NHS Data Dictionary.
+    The intended usage is to access the data elements section of the NHS Data Dictionary to access key lookups.
+    The benefits of having it in this package are that the lookups are the live lookups on the website and will not need to be maintained.
+    This package was commissioned by the NHS-R community to provide this consistency of lookups.
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.1
-Imports: xml2, dplyr, magrittr, rvest, stringr, 
+Imports: 
+    xml2,
+    dplyr,
+    magrittr,
+    rvest,
+    stringr,
+    purrr
 Collate: 
     'left_xl.R'
     'len_xl.R'

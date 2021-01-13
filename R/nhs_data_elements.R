@@ -8,14 +8,17 @@
 #'
 #' @return
 #' @include linkScrapeR.R
-#' @import dplyr xml2 rvest magrittr
+#' @importFrom rvest html_nodes html_table html_text
+#' @importFrom dplyr tibble filter
 #' @importFrom magrittr %>%
+#' @importFrom stringr str_detect str_locate
 #' @export
 #' @examples
 #' nhs_data_lookup <- nhs_data_elements()
 #' head(nhs_data_lookup, 10)
 
 nhs_data_elements <- function(){
+  link_name <- NULL
   mainweb <- "https://datadictionary.nhs.uk/data_elements_overview.html#dataElement_overview"
   list_links <- linkScrapeR(mainweb) %>%
     dplyr::filter(stringr::str_detect(url, 'data_elements'), #Filters out links in table that are not data elements

@@ -4,7 +4,7 @@
 \alias{tableR}
 \title{tableR function}
 \usage{
-tableR(url, xpath, title, add_zero_prefix = FALSE, ...)
+tableR(url, xpath, title = "Not Specified", add_zero_prefix = FALSE, ...)
 }
 \arguments{
 \item{url}{The URL of the website to scrape the table element from}
@@ -22,7 +22,4 @@ tableR(url, xpath, title, add_zero_prefix = FALSE, ...)
 }
 \description{
 This function uses the scapeR parent function to return a table of elements
-}
-\examples{
-permitted_codes <- tableR(url= "https://datadictionary.nhs.uk/data_elements/abdominal_x-ray_performed_reason.html", xpath = '//*[@id="element_abdominal_x-ray_performed_reason.permitted_codes"]/div/div/table', title = "x-ray performed", add_zero_prefix = TRUE)
 }

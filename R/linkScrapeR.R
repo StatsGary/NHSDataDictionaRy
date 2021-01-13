@@ -8,8 +8,9 @@
 #'
 #'
 #' @param url The website URL to detect active anchor hyperlink tags and extract them into a tibble
-#' @import dplyr xml2 rvest magrittr
+#' @importFrom rvest html_nodes html_table html_text html_attr
 #' @importFrom magrittr %>%
+#' @importFrom xml2 read_html
 #' @return
 #' @export
 #'

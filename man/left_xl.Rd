@@ -22,6 +22,6 @@ This function replicates the LEFT function in Excel and is utilised for left tri
 of character strings
 }
 \examples{
-left_xl(text= "This is some example text", num_char=4)
+left_xl(text= "This is some example text", num_char = 4)
 
 }
