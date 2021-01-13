@@ -156,13 +156,19 @@ print(head(treatment_function_lookup,10))
 There are common lookups that are needed, and this is one such mapping between specialty code, to get the description of the specialty unit description. I will show an example with a made up data frame to illustrate the use case for these lookups and to have up to date lookups:
 
 ```{r lookup_fields}
-act_aggregations <- data_frame(SpecCode = c(101,102,103),
-                             ActivityCounts = c(343, 354, 356), 
-                             Month = rep("May", 3))
+library(dplyr)
+act_aggregations <- data_frame(SpecCode = as.character(c(101,102,103, 104, 105)),
+                             ActivityCounts = round(rnorm(5,250,3),0), 
+                             Month = rep("May", 5))
 
-# Use dplyr to join patien
+# Use dplyr to join the NHS activity by specialty code
 
-
+act_aggregations %>% 
+  left_join(treatment_function_lookup, by = c("SpecCode"="Code"))
+  
+# This easily joins the lookup on to your data
   
 ```
+The benefit of having it in an R package is that you can instantaneously have a lookup of the most relevant and up to date NHS lookups, replacing the need to have a massive data warehouse to capture this information. 
+
 
