@@ -14,6 +14,10 @@ knitr::opts_chunk$set(
 )
 ```
 
+
+
+![](NHSRDDHex.png)
+
 # Context
 
 This package has been commissioned by the NHS-R community and is intended to be used to web scrape the [NHS Data Dictionary website](https://datadictionary.nhs.uk/data_elements_overview.html#dataElement_overview) for useful lookup tables. The package is maintained by [Gary Hutson - Head of Advanced Analytics at Arden and GEM Commissioning Support Unit](https://www.ardengemcsu.nhs.uk/) and to contact the maintainer directly you can navigate to this [site](https://hutsons-hacks.info/). 
@@ -26,6 +30,7 @@ To load the package, you can use the below command:
 
 ```{r setup}
 library(NHSDataDictionaRy)
+library(dplyr)
 ```
 
 This brings in the functions needed to work with the package. The below sub sections will show how to use the package, as intended.
@@ -156,8 +161,8 @@ print(head(treatment_function_lookup,10))
 There are common lookups that are needed, and this is one such mapping between specialty code, to get the description of the specialty unit description. I will show an example with a made up data frame to illustrate the use case for these lookups and to have up to date lookups:
 
 ```{r lookup_fields}
-library(dplyr)
-act_aggregations <- data_frame(SpecCode = as.character(c(101,102,103, 104, 105)),
+
+act_aggregations <- tibble(SpecCode = as.character(c(101,102,103, 104, 105)),
                              ActivityCounts = round(rnorm(5,250,3),0), 
                              Month = rep("May", 5))
 
@@ -171,4 +176,6 @@ act_aggregations %>%
 ```
 The benefit of having it in an R package is that you can instantaneously have a lookup of the most relevant and up to date NHS lookups, replacing the need to have a massive data warehouse to capture this information. 
 
+## xpathTextR function
 
+This function has been provided to return elements from a website, other than html tables, as these functions predominantely work with tables
