@@ -13,7 +13,6 @@
 #' @importFrom rvest html_nodes html_table html_text
 #' @importFrom magrittr %>%
 #' @importFrom xml2 read_html
-#' @return
 #' @export
 #'
 #

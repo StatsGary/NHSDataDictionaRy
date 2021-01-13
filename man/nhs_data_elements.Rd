@@ -6,9 +6,6 @@
 \usage{
 nhs_data_elements()
 }
-\value{
-
-}
 \description{
 Searches all the data elements in the data element index of the NHS data dictionary and returns the links.
 }

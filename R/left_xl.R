@@ -5,7 +5,6 @@
 #'
 #' @param text The text you want to LEFT trim
 #' @param num_char The number of characters your want to trim by
-#' @return
 #' @export
 #'
 #' @examples

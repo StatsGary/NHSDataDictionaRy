@@ -11,7 +11,6 @@
 #' @importFrom magrittr %>%
 #' @importFrom dplyr tibble
 #' @include scrapeR.R
-#' @return
 #' @export
 #'
 

@@ -6,7 +6,6 @@
 #'
 #' This function has no input parameters and returns the
 #'
-#' @return
 #' @include linkScrapeR.R
 #' @importFrom rvest html_nodes html_table html_text
 #' @importFrom dplyr tibble filter

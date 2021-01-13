@@ -9,9 +9,6 @@ linkScrapeR(url)
 \arguments{
 \item{url}{The website URL to detect active anchor hyperlink tags and extract them into a tibble}
 }
-\value{
-
-}
 \description{
 This is used to scrape all hyperlinks from a specific webpage.
 }

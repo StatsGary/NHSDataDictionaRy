@@ -11,9 +11,6 @@ len_xl(text, ...)
 
 \item{...}{Function forwarding to work with the base nchar method}
 }
-\value{
-
-}
 \description{
 This function replicates the LEN function in Excel and is utilised for finding the length of character strings.
 }

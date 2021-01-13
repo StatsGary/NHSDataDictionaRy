@@ -5,7 +5,6 @@
 #'
 #' @param text The text to get the numeric length of
 #' @param ... Function forwarding to work with the base nchar method
-#' @return
 #' @export
 #'
 #' @examples

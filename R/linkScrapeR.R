@@ -11,7 +11,6 @@
 #' @importFrom rvest html_nodes html_table html_text html_attr
 #' @importFrom magrittr %>%
 #' @importFrom xml2 read_html
-#' @return
 #' @export
 #'
 #' @examples linkScrapeR("https://nhsrcommunity.com/")

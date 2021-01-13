@@ -13,9 +13,6 @@ scrapeR(url, xpath, ...)
 
 \item{...}{Function to pass additional function forwarding options}
 }
-\value{
-
-}
 \description{
 Takes the url and xpath and scrapes HTML table elements from a website.
 }

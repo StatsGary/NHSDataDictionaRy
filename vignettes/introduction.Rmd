@@ -1,5 +1,5 @@
 ---
-title: "introduction"
+title: "NHSDataDictionaRy - a package for accessing NHS Data Dictionary with web scraping and other useful functions"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{introduction}
@@ -14,6 +14,54 @@ knitr::opts_chunk$set(
 )
 ```
 
+# Context
+
+This package has been commissioned by the NHS-R community and is intended to be used to web scrape the [NHS Data Dictionary website](https://datadictionary.nhs.uk/data_elements_overview.html#dataElement_overview) for useful lookup tables. The package is maintained by [Gary Hutson - Head of Advanced Analytics at Arden and GEM Commissioning Support Unit](https://www.ardengemcsu.nhs.uk/) and to contact the maintainer directly you can navigate to this [site](https://hutsons-hacks.info/). 
+
+Additionally, the package has been developed with generic web scraping functionality to allow other websites containing data tables and elements to be scraped. 
+
+## Loading the package
+
+To load the package, you can use the below command:
+
 ```{r setup}
 library(NHSDataDictionaRy)
 ```
+
+This brings in the functions needed to work with the package. The below sub sections will show how to use the package, as intended.
+
+## Accessing the NHS data links
+
+This function expects no return and is a way to query the NHS Data Dictionary database to get the most recent list of data elements and their associated lookups. The return of this will provide a tibble of all the links currently on the NHS Data Dictionary website:
+
+```{r extracting_dd}
+nhs_tibble <- NHSDataDictionaRy::nhs_data_elements()
+print(head(nhs_tibble))
+```
+This tibble gives a list of all lookups and their associated xpath codes i.e. a direct link to an HTML element, which is the standard way of extracting HTML DOM content. This is where the other functions in the package become powerful. 
+
+## Text manipulation of the tibble
+
+The NHSDataDictionaRy package provides a couple of Microsoft Excel convience functions for working with text data. These are:
+
+* left_xl()
+* right_xl()
+* mid_xl()
+* len_xl()
+
+I will demonstrate how these can be used on the tibble extracted from the previous example in the following sub sections. 
+
+### left_xl() function
+
+To utilise the left_xl function it expects two parameters - the first is the text to work with and the second is the number of characters to left trim by:
+
+```{r left_xl}
+#Grab a sub set of the data frame
+nhs_tibble
+NHSDataDictionaRy::left_xl()
+
+
+```
+
+
+

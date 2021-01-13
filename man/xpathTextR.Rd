@@ -11,9 +11,6 @@ xpathTextR(url, xpath)
 
 \item{xpath}{The xpath string derived by using the Inspect functionality in a web browser.}
 }
-\value{
-
-}
 \description{
 Returns xpath text from websites and can be used to access specific HTML nodes
 }

@@ -17,9 +17,6 @@ tableR(url, xpath, title = "Not Specified", add_zero_prefix = FALSE, ...)
 
 \item{...}{Function forwarding to parent function to pass additional arguments to function}
 }
-\value{
-
-}
 \description{
 This function uses the scapeR parent function to return a table of elements
 }
