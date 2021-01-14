@@ -6,7 +6,7 @@
   <!-- badges: end -->
 
 <!-- badges: start -->
-  [![Travis build status](https://travis-ci.com/StatsGary/NHSDataDictionaRy.svg?branch=master)](https://travis-ci.com/StatsGary/NHSDataDictionaRy)
+[![Build Status](https://travis-ci.com/StatsGary/NHSDataDictionaRy.svg?token=qEbF4fyFyqZQw11E4C2x&branch=master)](https://travis-ci.com/StatsGary/NHSDataDictionaRy)
   <!-- badges: end -->
 
  <!-- badges: start -->
