@@ -4,6 +4,12 @@
   <!-- badges: start -->
   [![R build status](https://github.com/StatsGary/NHSDataDictionaRy/workflows/R-CMD-check/badge.svg)](https://github.com/StatsGary/NHSDataDictionaRy/actions)
   <!-- badges: end -->
+
+ <!-- badges: start -->
+  [![CRAN status](https://www.r-pkg.org/badges/version/NHSDataDictionaRy)](https://CRAN.R-project.org/package=NHSDataDictionaRy)
+  <!-- badges: end -->
+  
+  
 The goal of this package is to provide a common set of functions for working with NHS Data Dictionary look up tables. 
 
 ## Installation
