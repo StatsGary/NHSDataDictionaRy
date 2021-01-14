@@ -1,6 +1,6 @@
 Package: NHSDataDictionaRy
 Type: Package
-Title: The package provides a common set of tools for working with the NHS Data Dictionary
+Title: NHS Data Dictionary Toolset For NHS Lookups
 Version: 0.1.2
 Author: Gary Hutson
 Maintainer: Gary Hutson <g.hutson@nhs.net>
