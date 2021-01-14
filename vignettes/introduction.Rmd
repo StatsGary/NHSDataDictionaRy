@@ -47,7 +47,7 @@ This tibble gives a list of all lookups and their associated xpath codes i.e. a 
 
 ## Text manipulation of the tibble
 
-The NHSDataDictionaRy package provides a couple of Microsoft Excel convience functions for working with text data. These are:
+The NHSDataDictionaRy package provides a couple of Microsoft Excel convenience functions for working with text data. These are:
 
 * left_xl()
 * right_xl()
@@ -178,4 +178,23 @@ The benefit of having it in an R package is that you can instantaneously have a 
 
 ## xpathTextR function
 
-This function has been provided to return elements from a website, other than html tables, as these functions predominately work with tables. The below example shows how this can be implemented, but requires the retrival of the xpath via the Inspect command in Google Chrome
+This function has been provided to return elements from a website, other than html tables, as these functions predominately work with tables. The below example shows how this can be implemented, but requires the retrieval of the xpath via the Inspect command in Google Chrome (CTRL + SHIFT + I):
+
+```{r xpath_text}
+
+url <- "https://datadictionary.nhs.uk/data_elements/abbreviated_mental_test_score.html"
+xpath_element <- '//*[@id="element_abbreviated_mental_test_score.description"]'
+
+# Run the xpathTextR function to retrieve details of the element retrieved
+
+NHSDataDictionaRy::xpathTextR(url, xpath_element)
+  
+```
+
+This provides details of the result, the text retrieved live from the website - this would need some cleaning, the website passed to the function, the xpath included, the result of the node search, the date and time the list was generated and the person and domain accessing this. 
+
+These could be used to scrape not just the data dictionary website, but any website. 
+
+# Wrapping up
+
+There are lots of use cases for this, but I would like to keep iterating this tool so please contact me with suggestions of what could be included in future versions. 
