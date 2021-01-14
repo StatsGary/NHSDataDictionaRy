@@ -2,11 +2,11 @@
 # NHSDataDictionaRy <img src="man/figures/logo.png" width="160px" align="right" />
 
   <!-- badges: start -->
-  <!--[![R build status](https://github.com/StatsGary/NHSDataDictionaRy/workflows/R-CMD-check/badge.svg)](https://github.com/StatsGary/NHSDataDictionaRy/actions) -->
+  [![R build status](https://github.com/StatsGary/NHSDataDictionaRy/workflows/R-CMD-check/badge.svg)](https://github.com/StatsGary/NHSDataDictionaRy/actions) 
   <!-- badges: end -->
 
    <!-- badges: start -->
-  [![Travis build status](https://travis-ci.com/StatsGary/NHSDataDictionaRy.svg?branch=master)](https://travis-ci.com/StatsGary/NHSDataDictionaRy)
+  <!--[![Travis build status](https://travis-ci.com/StatsGary/NHSDataDictionaRy.svg?branch=master)](https://travis-ci.com/StatsGary/NHSDataDictionaRy)-->
   <!-- badges: end -->
 
  <!-- badges: start -->
