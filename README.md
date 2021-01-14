@@ -5,7 +5,7 @@
   [![R build status](https://github.com/StatsGary/NHSDataDictionaRy/workflows/R-CMD-check/badge.svg)](https://github.com/StatsGary/NHSDataDictionaRy/actions) 
   <!-- badges: end -->
 
-   <!-- badges: start -->
+<!-- badges: start -->
   [![Travis build status](https://travis-ci.com/StatsGary/NHSDataDictionaRy.svg?branch=master)](https://travis-ci.com/StatsGary/NHSDataDictionaRy)
   <!-- badges: end -->
 
