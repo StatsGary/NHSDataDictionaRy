@@ -5,6 +5,10 @@
   <!--[![R build status](https://github.com/StatsGary/NHSDataDictionaRy/workflows/R-CMD-check/badge.svg)](https://github.com/StatsGary/NHSDataDictionaRy/actions) -->
   <!-- badges: end -->
 
+   <!-- badges: start -->
+  [![Travis build status](https://travis-ci.com/StatsGary/NHSDataDictionaRy.svg?branch=master)](https://travis-ci.com/StatsGary/NHSDataDictionaRy)
+  <!-- badges: end -->
+
  <!-- badges: start -->
   [![CRAN status](https://www.r-pkg.org/badges/version/NHSDataDictionaRy)](https://CRAN.R-project.org/package=NHSDataDictionaRy)
   <!-- badges: end -->
