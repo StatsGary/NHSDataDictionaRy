@@ -17,6 +17,14 @@ tableR(url, xpath, title = "Not Specified", add_zero_prefix = FALSE, ...)
 
 \item{...}{Function forwarding to parent function to pass additional arguments to function}
 }
+\value{
+A tibble (class data.frame) output from the results of the web scrape
+\itemize{
+  \item result - the extracted html table from url and xpath passed
+  \item DictType - defaults to Not Specified if nothing passed, however allows for custom dictionary / data frame tags to be created
+  \item DttmExtracted - a date and time stamp
+}
+}
 \description{
 This function uses the scapeR parent function to return a table of elements
 }

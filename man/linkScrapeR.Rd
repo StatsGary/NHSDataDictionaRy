@@ -9,6 +9,14 @@ linkScrapeR(url)
 \arguments{
 \item{url}{The website URL to detect active anchor hyperlink tags and extract them into a tibble}
 }
+\value{
+A tibble (class data.frame) with all active hyperlinks on the website for the URL (uniform resource locator) passed to the function.
+\itemize{
+  \item result - the extracted html table from url and xpath passed
+  \item link_name - the name of the link
+  \item url - the full url of the active href tag from HTML
+}
+}
 \description{
 This is used to scrape all hyperlinks from a specific webpage.
 }
@@ -19,5 +27,4 @@ This can be used on any website to pull back the hyperlink content of a web page
 }
 \examples{
 linkScrapeR("https://nhsrcommunity.com/")
-
 }

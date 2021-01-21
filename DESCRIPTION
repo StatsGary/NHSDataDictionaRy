@@ -1,10 +1,10 @@
 Package: NHSDataDictionaRy
 Type: Package
-Title: NHS Data Dictionary Toolset For NHS Lookups
+Title: NHS Data Dictionary Toolset for NHS Lookups
 Version: 0.1.2
 Author: Gary Hutson
 Maintainer: Gary Hutson <g.hutson@nhs.net>
-Description: The package provides a common set of simplified web scraping tools for working with the NHS Data Dictionary.
+Description: Providing a common set of simplified web scraping tools for working with the NHS Data Dictionary <https://datadictionary.nhs.uk/data_elements_overview.html>.
     The intended usage is to access the data elements section of the NHS Data Dictionary to access key lookups.
     The benefits of having it in this package are that the lookups are the live lookups on the website and will not need to be maintained.
     This package was commissioned by the NHS-R community to provide this consistency of lookups.
@@ -31,5 +31,7 @@ Collate:
     'xpathTextR.R'
 Suggests: 
     knitr,
-    rmarkdown
+    rmarkdown,
+    spelling
 VignetteBuilder: knitr
+Language: en-US

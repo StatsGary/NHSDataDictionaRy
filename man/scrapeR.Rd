@@ -13,6 +13,9 @@ scrapeR(url, xpath, ...)
 
 \item{...}{Function to pass additional function forwarding options}
 }
+\value{
+Returns the results of the scraping operation and the relevant fields from the html table - the xpath should make reference to an html table, otherwise an error is returned advising the user to check the xpath and url are correct.
+}
 \description{
 Takes the url and xpath and scrapes HTML table elements from a website.
 }

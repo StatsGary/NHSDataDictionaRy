@@ -11,9 +11,14 @@
 #' @importFrom rvest html_nodes html_table html_text html_attr
 #' @importFrom magrittr %>%
 #' @importFrom xml2 read_html
-#' @export
-#'
+#' @return A tibble (class data.frame) with all active hyperlinks on the website for the URL (uniform resource locator) passed to the function.
+#' \itemize{
+#'   \item result - the extracted html table from url and xpath passed
+#'   \item link_name - the name of the link
+#'   \item url - the full url of the active href tag from HTML
+#' }
 #' @examples linkScrapeR("https://nhsrcommunity.com/")
+#' @export
 #'
 linkScrapeR <- function(url){
   wp <- xml2::read_html(url)

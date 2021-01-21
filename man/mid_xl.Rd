@@ -13,6 +13,9 @@ mid_xl(text, start_num = 1, num_char = 0)
 
 \item{num_char}{The number of characters your want to trim by. This field needs to be numeric.}
 }
+\value{
+The extracted text between the start_num and the num_char to produce a sub string result.
+}
 \description{
 This function replicates the MID function in Excel and is utilised for left trimming
 of character strings.

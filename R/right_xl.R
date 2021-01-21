@@ -8,6 +8,7 @@
 #'
 #' @param text The text you want to RIGHT trim
 #' @param num_char The number of characters your want to trim by. This field needs to be numeric.
+#' @return The trimmed string from the text parameter and trimming by the number of characters num_char passed to the parameter.
 #' @export
 #'
 #' @examples

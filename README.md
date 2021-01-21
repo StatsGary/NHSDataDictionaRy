@@ -34,5 +34,5 @@ library(NHSDataDictionaRy)
 
 ## Credits 
 
-This package has been funded by the [NHS-R community]("https://nhsrcommunity.com/") and designed in conjunction with [Arden and GEM CSU]("https://www.ardengemcsu.nhs.uk/"). [Gary Hutson]("https://hutsons-hacks.info/") is the package maintainer and can advise on bug fixes and general functionality issues. Please create an issue on GitHub if you have any issues or request changes. 
+This package has been funded by the NHS-R community and designed in conjunction with Arden and GEM CSU. Gary Hutson is the package maintainer and can advise on bug fixes and general functionality issues. Please create an issue on GitHub if you have any issues or request changes. 
 

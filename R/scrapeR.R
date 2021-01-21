@@ -13,6 +13,7 @@
 #' @importFrom rvest html_nodes html_table html_text
 #' @importFrom magrittr %>%
 #' @importFrom xml2 read_html
+#' @return Returns the results of the scraping operation and the relevant fields from the html table - the xpath should make reference to an html table, otherwise an error is returned advising the user to check the xpath and url are correct.
 #' @export
 #'
 #
@@ -38,7 +39,6 @@ scrapeR <- function(url, xpath, ...){
   invisible(simple_lookup_table_scraped)
 
 }
-
 
 
 

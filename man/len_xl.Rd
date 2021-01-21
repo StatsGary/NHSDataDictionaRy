@@ -7,9 +7,12 @@
 len_xl(text, ...)
 }
 \arguments{
-\item{text}{The text to get the numeric length of}
+\item{text}{The text you want to calculate the length}
 
 \item{...}{Function forwarding to work with the base nchar method}
+}
+\value{
+An integer value calculating the length of the text passed
 }
 \description{
 This function replicates the LEN function in Excel and is utilised for finding the length of character strings.

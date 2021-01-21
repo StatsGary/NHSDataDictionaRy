@@ -9,6 +9,7 @@
 #' @param text The text you want to MID trim
 #' @param start_num The start number to start the trim. This needs to be numeric.
 #' @param num_char The number of characters your want to trim by. This field needs to be numeric.
+#' @return The extracted text between the start_num and the num_char to produce a sub string result.
 #' @export
 #'
 #' @examples

@@ -11,6 +11,12 @@
 #' @importFrom magrittr %>%
 #' @importFrom dplyr tibble
 #' @include scrapeR.R
+#' @return A tibble (class data.frame) output from the results of the web scrape
+#' \itemize{
+#'   \item result - the extracted html table from url and xpath passed
+#'   \item DictType - defaults to Not Specified if nothing passed, however allows for custom dictionary / data frame tags to be created
+#'   \item DttmExtracted - a date and time stamp
+#' }
 #' @export
 #'
 
@@ -18,7 +24,7 @@ tableR <- function(url, xpath, title="Not Specified", add_zero_prefix = FALSE, .
 
 
   if (is.null(url) | url == ""){
-    stop("The URL of the specific NHS Data Dictionary page needs to be entered")
+    stop("The URL of the specific page needs to be entered")
   }
 
   if (is.null(xpath) | xpath==""){
@@ -53,6 +59,5 @@ tableR <- function(url, xpath, title="Not Specified", add_zero_prefix = FALSE, .
   try(return(return_df), silent=F)
 
 }
-
 
 

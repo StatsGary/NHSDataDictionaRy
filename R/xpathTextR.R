@@ -8,6 +8,15 @@
 #' @importFrom rvest html_nodes html_table html_text
 #' @importFrom magrittr %>%
 #' @importFrom xml2 read_html
+#' @return A list with the results of scraping the specific xpath element
+#' \itemize{
+#'   \item result - the extracted text from the website element that has been scraped
+#'   \item website_passed - a copy of the input url for the website
+#'   \item html_node_result - returns the extracted html node result
+#'   \item datetime_access - returns a timestamp of when the results of the scraping operation have been completed
+#'   \item person_accessed - retrieves the system environment stored username and domain - this is concatenated together to form a mixed charatcer string
+#'
+#' }
 #' @export
 #'
 #'

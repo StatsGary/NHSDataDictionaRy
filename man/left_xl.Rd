@@ -13,6 +13,11 @@ left_xl(text, num_char = 0)
 
 \item{num_char}{The number of characters your want to trim by}
 }
+\value{
+
+
+Trims the text entered by the number of character parameter and returns the trimmed string
+}
 \description{
 left_xl function
 This function replicates the LEFT function in Excel and is utilised for left trimming

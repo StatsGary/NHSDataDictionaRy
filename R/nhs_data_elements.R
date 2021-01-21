@@ -11,6 +11,14 @@
 #' @importFrom dplyr tibble filter
 #' @importFrom magrittr %>%
 #' @importFrom stringr str_detect str_locate
+#' @return A tibble (class data frame) with the results of scraping the NHS Data Dictionary website for the data elements look ups, if no return this will produce an appropriate informational message.
+#' \itemize{
+#'   \item link_name - the name of the scraped link. This relates to the actual name of the data element from the NHS Data Dictionary.
+#'   \item url - the url passed to the parameter
+#'   \item link_short - extracted from the data_elements top level, returning the level down from the data_elements level in the website DOM
+#'   \item full_url - the full url of where the data element is on the NHS Data Dictionary website
+#'   \item xpath_perm_code - utilises the element in the website and appends the link_short - to pull back only permitted codes from the website. This will produce an appropriate error if there is no return.
+#' }
 #' @export
 #' @examples
 #' nhs_data_lookup <- nhs_data_elements()
