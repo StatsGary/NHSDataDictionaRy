@@ -1,6 +1,6 @@
 #' linkScrapeR
 #'
-#' This is used to scrape all hyperlinks from a specific webpage.
+#' This is used to scrape all hyperlinks from a specific web page.
 #'
 #' Once the links have been scraped they will be outputted into a tibble for exploration.
 #'
