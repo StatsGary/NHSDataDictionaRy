@@ -11,9 +11,10 @@ A tibble (class data frame) with the results of scraping the NHS Data Dictionary
 \itemize{
   \item link_name - the name of the scraped link. This relates to the actual name of the data element from the NHS Data Dictionary.
   \item url - the url passed to the parameter
-  \item link_short - extracted from the data_elements top level, returning the level down from the data_elements level in the website DOM
   \item full_url - the full url of where the data element is on the NHS Data Dictionary website
-  \item xpath_perm_code - utilises the element in the website and appends the link_short - to pull back only permitted codes from the website. This will produce an appropriate error if there is no return.
+  \item xpath_nat_code - utilises the element in the website and appends the link_short - to pull back only national codes from the dictionary site. NOTE: not all of the returns will have national code tables.
+  \item xpath_also_known - pulls back the data dictionary elements alias table - this will be available for all data elements
+
 }
 }
 \description{

@@ -26,6 +26,7 @@
 #' head(nhs_data_lookup, 10)
 
 nhs_data_elements <- function(){
+  link_name <- NULL
   mainweb <- "https://datadictionary.nhs.uk/data_elements_overview.html#dataElement_overview"
   list_links <- linkScrapeR(mainweb) #Returns the results of the linkScraperR
 
