@@ -2,7 +2,7 @@
 # NHSDataDictionaRy <img src="man/figures/logo.png" width="160px" align="right" />
 
   <!-- badges: start -->
-  [![R build status](https://github.com/StatsGary/NHSDataDictionaRy/workflows/R-CMD-check/badge.svg)](https://github.com/StatsGary/NHSDataDictionaRy/actions) 
+ ![R-CMD-check](https://github.com/StatsGary/NHSDataDictionaRy/workflows/R-CMD-check/badge.svg)
   <!-- badges: end -->
 
 <!-- badges: start -->
