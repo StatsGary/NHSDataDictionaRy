@@ -32,7 +32,7 @@ nhs_data_elements <- function(){
 
   if(nrow(list_links) <1){
     print("The list links has not been successful on this occassion. There is an issue with the linkScrapeR function")
-    break
+    stop()
   }
 
   list_links <- list_links %>%
