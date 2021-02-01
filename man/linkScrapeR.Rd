@@ -18,7 +18,7 @@ A tibble (class data.frame) with all active hyperlinks on the website for the UR
 }
 }
 \description{
-This is used to scrape all hyperlinks from a specific webpage.
+This is used to scrape all hyperlinks from a specific web page.
 }
 \details{
 Once the links have been scraped they will be outputted into a tibble for exploration.
