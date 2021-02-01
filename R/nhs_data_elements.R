@@ -28,7 +28,7 @@
 nhs_data_elements <- function(){
   link_name <- NULL
   mainweb <- "https://datadictionary.nhs.uk/data_elements_overview.html#dataElement_overview"
-  list_links <- linkScrapeR(mainweb) #Returns the results of the linkScraperR
+  list_links <- NHSDataDictionaRy::linkScrapeR(mainweb) #Returns the results of the linkScraperR
 
   if(nrow(list_links) <1){
     print("The list links has not been successful on this occassion. There is an issue with the linkScrapeR function")
