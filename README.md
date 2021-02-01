@@ -32,7 +32,13 @@ library(NHSDataDictionaRy)
 
 ```
 
+## NHS Data Elements
+
+When retrieving the current hyperlinks from the data elements page of R it is known that not all of these elements will have <strong>National Code</strong> tables. If a National Code table does not exist for the selected lookup table, then you will receive a message stating the lookup table requested does not exist and to try another lookup table. If you check this, you will see that the relevant data elements page of the NHS Data Dictionary does not contain that specific national codes table. 
+
 ## Credits 
 
-This package has been funded by the NHS-R community and designed in conjunction with Arden and GEM CSU. Gary Hutson is the package maintainer and can advise on bug fixes and general functionality issues. Please create an issue on GitHub if you have any issues or request changes. 
+This package has been funded by the NHS-R community and designed in conjunction with Arden and GEM CSU. Gary Hutson is the package maintainer and can advise on bug fixes and general functionality issues. 
+
+Please create an issue on GitHub if you have any issues or request changes. 
 
