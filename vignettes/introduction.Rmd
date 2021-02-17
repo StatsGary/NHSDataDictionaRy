@@ -1,9 +1,8 @@
 ---
 title: "NHSDataDictionaRy - a package for accessing NHS Data Dictionary with web scraping and other useful functions"
-author: "Gary Hutson"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{NHSDataDictionaRy - a package for accessing NHS Data Dictionary with web scraping and other useful functions}
+  %\VignetteIndexEntry{introduction.Rmd}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -33,6 +32,8 @@ To load the package, you can use the below command:
 ```{r setup}
 library(NHSDataDictionaRy)
 library(dplyr)
+library(magrittr)
+library(tibble)
 ```
 
 This brings in the functions needed to work with the package. The below sub sections will show how to use the package, as intended.
@@ -141,7 +142,7 @@ This package provides functionality for working with the nhs_data_elements extra
 
 The scrapeR function is the workhorse, but the tableR wraps the results of the function in a nice tibble output. This will show you how to utilise the return tibble and to pass the function through the tableR to scrape a tibble to be utilised for lookups:
 
-```{r tableR}
+```{r tableR_example}
 # Filter by a specific lookup required
 reduced_tibble <- 
   dplyr::filter(nhs_tibble, link_name == "ACTIVITY TREATMENT FUNCTION CODE")
@@ -153,7 +154,7 @@ national_codes <- NHSDataDictionaRy::tableR(url=reduced_tibble$full_url,
                           title = "NHS Hospital Activity Treatment Function National Codes")
 
 default_codes <- NHSDataDictionaRy::tableR(url=reduced_tibble$full_url,
-                          xpath = reduced_tibble$xpath_default_codes, 
+                          xpath = reduced_tibble$xpath_default_code, 
                           title = "NHS Hospital Activity Treatment Function Default Codes")
 
 
