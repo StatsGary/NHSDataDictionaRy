@@ -18,7 +18,8 @@ Imports:
     magrittr,
     rvest,
     stringr,
-    purrr
+    purrr, 
+    tibble
 Collate: 
     'left_xl.R'
     'len_xl.R'
