@@ -13,6 +13,7 @@ A tibble (class data frame) with the results of scraping the NHS Data Dictionary
   \item url - the url passed to the parameter
   \item full_url - the full url of where the data element is on the NHS Data Dictionary website
   \item xpath_nat_code - utilises the element in the website and appends the link_short - to pull back only national codes from the dictionary site. NOTE: not all of the returns will have national code tables.
+  \item xpath_default_codes - pulls back the data dictionary default codes - these can be then used with the national codes
   \item xpath_also_known - pulls back the data dictionary elements alias table - this will be available for all data elements
 
 }

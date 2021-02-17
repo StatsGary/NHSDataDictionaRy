@@ -1,8 +1,9 @@
 ---
 title: "NHSDataDictionaRy - a package for accessing NHS Data Dictionary with web scraping and other useful functions"
+author: "Gary Hutson"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{introduction}
+  %\VignetteIndexEntry{NHSDataDictionaRy - a package for accessing NHS Data Dictionary with web scraping and other useful functions}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -14,13 +15,14 @@ knitr::opts_chunk$set(
 )
 ```
 
+<img src="NHSRDDHex.png" align="right">
 
-
-![](NHSRDDHex.png)
 
 # Context
 
-This package has been commissioned by the NHS-R community and is intended to be used to web scrape the [NHS Data Dictionary website](https://datadictionary.nhs.uk/data_elements_overview.html#dataElement_overview) for useful lookup tables. The package is maintained by [Gary Hutson - Head of Advanced Analytics at Arden and GEM Commissioning Support Unit](https://www.ardengemcsu.nhs.uk/) and to contact the maintainer directly you can navigate to this [site](https://hutsons-hacks.info/). 
+This package has been commissioned by the NHS-R community and is intended to be used to web scrape the [NHS Data Dictionary website](https://datadictionary.nhs.uk/data_elements_overview.html#dataElement_overview) for useful lookup tables. The NHS-R community have been pivotal in getting this package off the ground. 
+
+The package is maintained by [Gary Hutson - Head of Advanced Analytics at Arden and GEM Commissioning Support Unit](https://www.ardengemcsu.nhs.uk/) and to contact the maintainer directly you can navigate to this [site](https://hutsons-hacks.info/). 
 
 Additionally, the package has been developed with generic web scraping functionality to allow other websites containing data tables and elements to be scraped. 
 
@@ -146,18 +148,27 @@ reduced_tibble <-
 
 #Use the tableR function to query the NHS Data Dictionary website and return the associate tibble
 
-treatment_function_lookup <- NHSDataDictionaRy::tableR(url=reduced_tibble$full_url,
+national_codes <- NHSDataDictionaRy::tableR(url=reduced_tibble$full_url,
                           xpath = reduced_tibble$xpath_nat_code, 
-                          title = "NHS Hospital Activity Treatment Function Codes")
+                          title = "NHS Hospital Activity Treatment Function National Codes")
 
-treatment_function_meta <- NHSDataDictionaRy::tableR(url=reduced_tibble$full_url,
-                                                     xpath=reduced_tibble$xpath_also_known,
-                                                     title = "Activity Treatment Function Code Meta")
+default_codes <- NHSDataDictionaRy::tableR(url=reduced_tibble$full_url,
+                          xpath = reduced_tibble$xpath_default_codes, 
+                          title = "NHS Hospital Activity Treatment Function Default Codes")
+
+
+# Here you could merge the codes - as you will have national and default codes
+
+merged_frame <- national_codes %>% 
+  dplyr::bind_rows(default_codes)
+
 
 # The query has returned results, if the url does not have a lookup table an error will be thrown
 
-print(head(treatment_function_lookup,10))
-print(treatment_function_meta)
+print(head(national_codes,10))
+print(head(default_codes), 10)
+print(head(merged_frame))
+
   
 ```
 
@@ -177,7 +188,7 @@ act_aggregations <- tibble(SpecCode = as.character(c(101,102,103, 104, 105)),
 # Use dplyr to join the NHS activity by specialty code
 
 act_aggregations %>% 
-  left_join(treatment_function_lookup, by = c("SpecCode"="Code"))
+  left_join(merged_frame, by = c("SpecCode"="Code"))
   
 # This easily joins the lookup on to your data
   
@@ -195,13 +206,32 @@ xpath_element <- '//*[@id="element_abbreviated_mental_test_score.description"]'
 
 # Run the xpathTextR function to retrieve details of the element retrieved
 
-NHSDataDictionaRy::xpathTextR(url, xpath_element)
+result_list <- NHSDataDictionaRy::xpathTextR(url, xpath_element)
+print(result_list)
+
+
   
 ```
 
 This provides details of the result, the text retrieved live from the website - this would need some cleaning, the website passed to the function, the xpath included, the result of the node search, the date and time the list was generated and the person and domain accessing this. 
 
-These could be used to scrape not just the data dictionary website, but any website. 
+### Cleaning the text example
+
+The example below shows how the text could be cleaned once it is retrieved:
+
+```{r cleaned_text}
+# Use the returned result and do some text processing
+clean_text <- trimws(unlist(result_list$result))
+clean_text <- clean_text %>% 
+  gsub("[\r\n]", "", .) %>% #Remove new line and breaks
+  trimws() %>% #Get rid of any white space
+  as.character() #Cast to a character vector
+
+print(clean_text)
+
+```
+
+I have used the trim white space function to extract the result element from the returned list from the previous function and now I use piping to a gsub function to remove newlines and spaces, I use the trimws() command again to make sure the spacing is sorted and then I convert (cast) this into a character string. Finally, the results are printed. 
 
 # Wrapping up
 

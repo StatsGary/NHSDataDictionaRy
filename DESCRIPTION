@@ -1,7 +1,7 @@
 Package: NHSDataDictionaRy
 Type: Package
 Title: NHS Data Dictionary Toolset for NHS Lookups
-Version: 1.2.0
+Version: 1.2.1
 Author: Gary Hutson
 Maintainer: Gary Hutson <g.hutson@nhs.net>
 Description: Providing a common set of simplified web scraping tools for working with the NHS Data Dictionary <https://datadictionary.nhs.uk/data_elements_overview.html>.
