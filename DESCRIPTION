@@ -5,7 +5,6 @@ Version: 1.2.1
 Authors@R: c(
             person("Gary", "Hutson", email = "g.hutson@nhs.net", role = c("aut", "cre")), 
             person("Calum", "Polwart", email = "calum.polwart", role = "ctb" ))
-                  
 Maintainer: Gary Hutson <g.hutson@nhs.net>
 Description: Providing a common set of simplified web scraping tools for working with the NHS Data Dictionary <https://datadictionary.nhs.uk/data_elements_overview.html>.
     The intended usage is to access the data elements section of the NHS Data Dictionary to access key lookups.
