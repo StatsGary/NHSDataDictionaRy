@@ -23,14 +23,15 @@ Imports:
     purrr, 
     tibble
 Collate: 
+    'scrapeR.R'
+    'tableR.R'
+    'NHStableR.R'
     'left_xl.R'
     'len_xl.R'
     'linkScrapeR.R'
     'mid_xl.R'
     'nhs_data_elements.R'
     'right_xl.R'
-    'scrapeR.R'
-    'tableR.R'
     'xpathTextR.R'
 Suggests: 
     knitr,
