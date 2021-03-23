@@ -14,6 +14,8 @@
 #'   \item DictType - defaults to Not Specified if nothing passed, however allows for custom dictionary / data frame tags to be created
 #'   \item DttmExtracted - a date and time stamp
 #' }
+#' @examples
+#' NHStableR("ACCOMMODATION STATUS CODE")
 #' @export
 #'
 

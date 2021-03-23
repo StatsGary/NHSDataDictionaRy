@@ -22,3 +22,6 @@ A tibble (class data.frame) output from the results of the web scrape
 \description{
 This function uses the tableR parent function to return a table of elements, specifically from the NHS Data Dictionary
 }
+\examples{
+NHStableR("ACCOMMODATION STATUS CODE")
+}
