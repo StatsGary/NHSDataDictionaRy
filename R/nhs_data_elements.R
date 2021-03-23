@@ -49,8 +49,11 @@ nhs_data_elements <- function(){
   extracted_string_amend <- substr(extracted_string,1, html_loc-1)
   list_links$full_url <- as.character(paste0("https://datadictionary.nhs.uk/", list_links$url))
   list_links$xpath_nat_code <- paste0("//*[@id=", "\"element_",extracted_string_amend, '.national_codes\"]/div/div/table')
-  list_links$xpath_default_code <- paste0("//*[@id=", "\"element_",extracted_string_amend, '.default_codes\"]/div/div/table')
+  list_links$xpath_default_codes <- paste0("//*[@id=", "\"element_",extracted_string_amend, '.default_codes\"]/div/div/table')
   list_links$xpath_also_known <- paste0("//*[@id=", "\"element_",extracted_string_amend, '.also_known_as\"]/div/div/table')
+
+
+  # Pull back default codes if there are national codes available
 
   return(list_links)
 }
