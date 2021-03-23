@@ -166,6 +166,26 @@ print(head(national_codes,10))
 
 Not all lookups will have associated national code tables, if they are not returned you will receive a message saying the lookup table is not available for this NHS Data Dictionary type. 
 
+## Even simpler access to the NHS Data Dictionary
+The NHStableR function is a wrapper for the tableR function which specifically uses the NHS Data Dictionary Website and retrieves a single tibble as an output.
+
+```{r NHStableR_example}
+# Simply call the dictionary with the element name from the website
+
+national_codes <- NHSDataDictionaRy::NHStableR("ACTIVITY TREATMENT FUNCTION CODE")
+
+# The query has returned results, if the url does not have a lookup table an error will be thrown
+
+print(head(national_codes,10))
+  
+```
+
+If you wanted to add a title, as with the previous example, you can call:
+
+```
+national_codes <- NHSDataDictionaRy::NHStableR("ACTIVITY TREATMENT FUNCTION CODE",
+                        title = "NHS Hospital Activity Treatment Function National Codes")
+```
 
 ## Using my lookup with NHS data 
 
