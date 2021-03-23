@@ -3,7 +3,7 @@
 #'
 #' This function uses the tableR parent function to return a table of elements, specifically from the NHS Data Dictionary
 #'
-#' @param data_element_name The URL of the website to scrape the table element from
+#' @param data_element_name The data element name from https://datadictionary.nhs.uk/data_elements for which to return the table of elements, for example "ACCOMMODATION STATUS CODE"
 #' @param ... Function forwarding to parent function to pass additional arguments to function (e.g. title, add_zero_prefix)
 #' @importFrom magrittr %>%
 #' @importFrom dplyr tibble
