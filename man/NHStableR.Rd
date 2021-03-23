@@ -7,21 +7,24 @@
 NHStableR(data_element_name, ...)
 }
 \arguments{
-\item{data_element_name}{The data element name from https://datadictionary.nhs.uk/data_elements for which to return the table of elements, for example "ACCOMMODATION STATUS CODE"}
+\item{data_element_name}{The data element name from \url{https://datadictionary.nhs.uk/data_elements} for which to return the table of elements, for example "ACCOMMODATION STATUS CODE"}
 
 \item{...}{Function forwarding to parent function to pass additional arguments to function (e.g. title, add_zero_prefix)}
 }
 \value{
 A tibble (class data.frame) output from the results of the web scrape
 \itemize{
-  \item result - the extracted html table from url and xpath passed
+  \item result - the extracted html table from the element page of the NHS Data Dictionary
   \item DictType - defaults to Not Specified if nothing passed, however allows for custom dictionary / data frame tags to be created
   \item DttmExtracted - a date and time stamp
 }
 }
 \description{
-This function uses the tableR parent function to return a table of elements, specifically from the NHS Data Dictionary
+This function uses the \code{\link{tableR}} parent function to return a table of elements, specifically from the NHS Data Dictionary
 }
 \examples{
 NHStableR("ACCOMMODATION STATUS CODE")
+# Returns a tibble with the Code and Description from https://datadictionary.nhs.uk/data_elements/accommodation_status_code.html
+# with Dict_Type added and a Date and Time the dictionary was extracted.
+
 }
