@@ -2,16 +2,10 @@
 # NHSDataDictionaRy <img src="man/figures/logo.png" width="160px" align="right" />
 
   <!-- badges: start -->
-  [![R build status](https://github.com/StatsGary/NHSDataDictionaRy/workflows/R-CMD-check/badge.svg)](https://github.com/StatsGary/NHSDataDictionaRy/actions) 
-  <!-- badges: end -->
+ ![R-CMD-check](https://github.com/StatsGary/NHSDataDictionaRy/workflows/R-CMD-check/badge.svg)
+ [![Build Status](https://travis-ci.com/StatsGary/NHSDataDictionaRy.svg?token=qEbF4fyFyqZQw11E4C2x&branch=master)](https://travis-ci.com/StatsGary/NHSDataDictionaRy)
+   [![CRAN status](https://www.r-pkg.org/badges/version/NHSDataDictionaRy)](https://CRAN.R-project.org/package=NHSDataDictionaRy)
 
-<!-- badges: start -->
-[![Build Status](https://travis-ci.com/StatsGary/NHSDataDictionaRy.svg?token=qEbF4fyFyqZQw11E4C2x&branch=master)](https://travis-ci.com/StatsGary/NHSDataDictionaRy)
-  <!-- badges: end -->
-
- <!-- badges: start -->
-  [![CRAN status](https://www.r-pkg.org/badges/version/NHSDataDictionaRy)](https://CRAN.R-project.org/package=NHSDataDictionaRy)
-  <!-- badges: end -->
   
   
 The goal of this package is to provide a common set of functions for working with NHS Data Dictionary look up tables. 

@@ -2,7 +2,7 @@
 title: "NHSDataDictionaRy - a package for accessing NHS Data Dictionary with web scraping and other useful functions"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{introduction}
+  %\VignetteIndexEntry{introduction.Rmd}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -14,13 +14,14 @@ knitr::opts_chunk$set(
 )
 ```
 
+<img src="NHSRDDHex.png" align="right">
 
-
-![](NHSRDDHex.png)
 
 # Context
 
-This package has been commissioned by the NHS-R community and is intended to be used to web scrape the [NHS Data Dictionary website](https://datadictionary.nhs.uk/data_elements_overview.html#dataElement_overview) for useful lookup tables. The package is maintained by [Gary Hutson - Head of Advanced Analytics at Arden and GEM Commissioning Support Unit](https://www.ardengemcsu.nhs.uk/) and to contact the maintainer directly you can navigate to this [site](https://hutsons-hacks.info/). 
+This package has been commissioned by the NHS-R community and is intended to be used to web scrape the [NHS Data Dictionary website](https://datadictionary.nhs.uk/data_elements_overview.html#dataElement_overview) for useful lookup tables. The NHS-R community have been pivotal in getting this package off the ground. 
+
+The package is maintained by [Gary Hutson - Head of Advanced Analytics at Arden and GEM Commissioning Support Unit](https://www.ardengemcsu.nhs.uk/) and to contact the maintainer directly you can navigate to this [site](https://hutsons-hacks.info/). 
 
 Additionally, the package has been developed with generic web scraping functionality to allow other websites containing data tables and elements to be scraped. 
 
@@ -31,6 +32,8 @@ To load the package, you can use the below command:
 ```{r setup}
 library(NHSDataDictionaRy)
 library(dplyr)
+library(magrittr)
+library(tibble)
 ```
 
 This brings in the functions needed to work with the package. The below sub sections will show how to use the package, as intended.
@@ -139,30 +142,50 @@ This package provides functionality for working with the nhs_data_elements extra
 
 The scrapeR function is the workhorse, but the tableR wraps the results of the function in a nice tibble output. This will show you how to utilise the return tibble and to pass the function through the tableR to scrape a tibble to be utilised for lookups:
 
-```{r tableR}
+```{r tableR_example}
 # Filter by a specific lookup required
 reduced_tibble <- 
   dplyr::filter(nhs_tibble, link_name == "ACTIVITY TREATMENT FUNCTION CODE")
 
 #Use the tableR function to query the NHS Data Dictionary website and return the associate tibble
 
-treatment_function_lookup <- NHSDataDictionaRy::tableR(url=reduced_tibble$full_url,
+national_codes <- NHSDataDictionaRy::tableR(url=reduced_tibble$full_url,
                           xpath = reduced_tibble$xpath_nat_code, 
-                          title = "NHS Hospital Activity Treatment Function Codes")
+                          title = "NHS Hospital Activity Treatment Function National Codes")
 
-treatment_function_meta <- NHSDataDictionaRy::tableR(url=reduced_tibble$full_url,
-                                                     xpath=reduced_tibble$xpath_also_known,
-                                                     title = "Activity Treatment Function Code Meta")
+
+
 
 # The query has returned results, if the url does not have a lookup table an error will be thrown
 
-print(head(treatment_function_lookup,10))
-print(treatment_function_meta)
+print(head(national_codes,10))
+
+
   
 ```
 
 Not all lookups will have associated national code tables, if they are not returned you will receive a message saying the lookup table is not available for this NHS Data Dictionary type. 
 
+## Even simpler access to the NHS Data Dictionary
+The NHStableR function is a wrapper for the tableR function which specifically uses the NHS Data Dictionary Website and retrieves a single tibble as an output.
+
+```{r NHStableR_example}
+# Simply call the dictionary with the element name from the website
+
+national_codes <- NHSDataDictionaRy::NHStableR("ACTIVITY TREATMENT FUNCTION CODE")
+
+# The query has returned results, if the url does not have a lookup table an error will be thrown
+
+print(head(national_codes,10))
+  
+```
+
+If you wanted to add a title, as with the previous example, you can call:
+
+```
+national_codes <- NHSDataDictionaRy::NHStableR("ACTIVITY TREATMENT FUNCTION CODE",
+                        title = "NHS Hospital Activity Treatment Function National Codes")
+```
 
 ## Using my lookup with NHS data 
 
@@ -177,7 +200,7 @@ act_aggregations <- tibble(SpecCode = as.character(c(101,102,103, 104, 105)),
 # Use dplyr to join the NHS activity by specialty code
 
 act_aggregations %>% 
-  left_join(treatment_function_lookup, by = c("SpecCode"="Code"))
+  left_join(national_codes, by = c("SpecCode"="Code"))
   
 # This easily joins the lookup on to your data
   
@@ -195,13 +218,32 @@ xpath_element <- '//*[@id="element_abbreviated_mental_test_score.description"]'
 
 # Run the xpathTextR function to retrieve details of the element retrieved
 
-NHSDataDictionaRy::xpathTextR(url, xpath_element)
+result_list <- NHSDataDictionaRy::xpathTextR(url, xpath_element)
+print(result_list)
+
+
   
 ```
 
 This provides details of the result, the text retrieved live from the website - this would need some cleaning, the website passed to the function, the xpath included, the result of the node search, the date and time the list was generated and the person and domain accessing this. 
 
-These could be used to scrape not just the data dictionary website, but any website. 
+### Cleaning the text example
+
+The example below shows how the text could be cleaned once it is retrieved:
+
+```{r cleaned_text}
+# Use the returned result and do some text processing
+clean_text <- trimws(unlist(result_list$result))
+clean_text <- clean_text %>% 
+  gsub("[\r\n]", "", .) %>% #Remove new line and breaks
+  trimws() %>% #Get rid of any white space
+  as.character() #Cast to a character vector
+
+print(clean_text)
+
+```
+
+I have used the trim white space function to extract the result element from the returned list from the previous function and now I use piping to a gsub function to remove newlines and spaces, I use the trimws() command again to make sure the spacing is sorted and then I convert (cast) this into a character string. Finally, the results are printed. 
 
 # Wrapping up
 
