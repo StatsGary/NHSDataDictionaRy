@@ -207,6 +207,20 @@ act_aggregations %>%
 ```
 The benefit of having it in an R package is that you can instantaneously have a lookup of the most relevant and up to date NHS lookups, replacing the need to have a massive data warehouse to capture this information. 
 
+## Using the lookup with factors
+Rather than using joins, you can also rename the codes as factors using the forcats package.  
+
+```{r factored}
+act_aggregations %>%
+  mutate(SpecCode = forcats::fct_recode(
+    SpecCode, 
+    !!!tableRtoNamedList(
+      "ACTIVITY TREATMENT FUNCTION CODE", 
+      table_method = "NHStableR")
+    )
+  )
+```
+
 ## xpathTextR function
 
 This function has been provided to return elements from a website, other than html tables, as these functions predominately work with tables. The below example shows how this can be implemented, but requires the retrieval of the xpath via the Inspect command in Google Chrome (CTRL + SHIFT + I):

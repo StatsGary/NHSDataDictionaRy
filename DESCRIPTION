@@ -32,6 +32,7 @@ Collate:
     'mid_xl.R'
     'nhs_data_elements.R'
     'right_xl.R'
+    'tableRtoNamedList.R'
     'xpathTextR.R'
 Suggests: 
     knitr,
