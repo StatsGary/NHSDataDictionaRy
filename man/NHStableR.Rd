@@ -7,14 +7,14 @@
 NHStableR(data_element_name, ...)
 }
 \arguments{
-\item{data_element_name}{The data element name from \url{https://datadictionary.nhs.uk/data_elements} for which to return the table of elements, for example "ACCOMMODATION STATUS CODE"}
+\item{data_element_name}{The data element name from \url{https://datadictionary.nhs.uk/data_elements} for which to return the National table of elements, for example "ACCOMMODATION STATUS CODE"}
 
 \item{...}{Function forwarding to parent function to pass additional arguments to function (e.g. title, add_zero_prefix)}
 }
 \value{
 A tibble (class data.frame) output from the results of the web scrape
 \itemize{
-  \item result - the extracted html table from the element page of the NHS Data Dictionary
+  \item result - the extracted national html code table from the element page of the NHS Data Dictionary
   \item DictType - defaults to Not Specified if nothing passed, however allows for custom dictionary / data frame tags to be created
   \item DttmExtracted - a date and time stamp
 }
