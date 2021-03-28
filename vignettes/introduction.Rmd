@@ -259,6 +259,23 @@ print(clean_text)
 
 I have used the trim white space function to extract the result element from the returned list from the previous function and now I use piping to a gsub function to remove newlines and spaces, I use the trimws() command again to make sure the spacing is sorted and then I convert (cast) this into a character string. Finally, the results are printed. 
 
+## Use with OpenSafely Code Lists
+OpenSafely is a project from TheDataLab, using a secure analytics platform for electronic health records in the NHS, created to deliver urgent results during the global COVID-19 emergency.  The project follows an open, reproducible phillosophy, and has published the codelist used for their research.  Alongside this, they have published wesbite that allows individual users to register (free of charge) and create open code lists of medicines, procedures and diagnoses.   These lists can be downloaded in CSV format and are publicly accessible.  The list is also available as an html table and can be downloaded using the NHS Data Dictionary tools.
+
+Simply visit (https://codelists.opensafely.org)[https://codelists.opensafely.org] and find the list you wish to use.  Open the list, and on the left of the list you will see fopr example **Codelist ID:** opensafely/ace-inhibitor-medications.  OpenSafely uses clinical terminalogies that are copyright of other organisations - refer to their website for details of use.
+
+```{r OpenSafely}
+# To access the latest simply use
+openSafelyCodeList("opensafely/ace-inhibitor-medications")
+
+# To access a specific version use
+openSafelyCodeList("opensafely/ace-inhibitor-medications", "2020-05-19") -> aceInhibitors
+
+head(aceInhibitors, 6)
+
+```
+
+
 # Wrapping up
 
 There are lots of use cases for this, but I would like to keep iterating this tool so please contact me with suggestions of what could be included in future versions. 
