@@ -44,3 +44,8 @@ This package has been funded by the NHS-R community and designed in conjunction 
 
 Please create an issue on GitHub if you have any issues or request changes. 
 
+## Collaborators
+
+See the superstars who have added to this package:
+[![All Contributors](https://img.shields.io/badge/all_contributors-54-orange.svg?style=flat-square)](#contributors-)
+
