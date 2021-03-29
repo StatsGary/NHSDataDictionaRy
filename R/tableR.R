@@ -23,7 +23,7 @@
 tableR <- function(url, xpath, title="Not Specified", add_zero_prefix = FALSE, ...){
 
 
-  if (is.null(url) | url == ""){
+  if (is.null(url) | url == "" | length(url)==0){
     stop("The URL of the specific page needs to be entered")
   }
 
