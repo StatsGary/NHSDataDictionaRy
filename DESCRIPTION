@@ -14,7 +14,7 @@ Description: Providing a common set of simplified web scraping tools for working
     The OpenSafely lookups have now been added <https://codelists.opensafely.org/>.
 License: MIT + file LICENSE
 Encoding: UTF-8
-LazyData: true
+LazyData: false
 RoxygenNote: 7.1.1
 Imports: 
     xml2,

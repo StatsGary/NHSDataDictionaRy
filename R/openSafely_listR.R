@@ -8,7 +8,6 @@
 #' @param version The version of the code list if not the most recent
 #' @param ... Function forwarding to parent function to pass additional arguments to function (e.g. title, add_zero_prefix)
 #' @importFrom magrittr %>%
-#' @importFrom dplyr tibble
 #' @importFrom rvest html_node html_text
 #' @importFrom xml2 read_html
 #' @include tableR.R right_xl.R left_xl.R mid_xl.R
