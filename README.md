@@ -45,5 +45,6 @@ This package has been funded by the NHS-R community and designed in conjunction 
 
 Please create an issue on GitHub if you have any issues or request changes. 
 
+@all-contributors bot
 
 
