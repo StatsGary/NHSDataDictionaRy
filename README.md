@@ -32,8 +32,9 @@ When retrieving the current hyperlinks from the data elements page of R it is kn
 
 ## Additional updates
 
+A new update has been added to the package to allow OpenSafely data to be intergated via the R lookup. 
+
 Updates are being worked on at the moment to include:
-- Links to OpenSafely data
 - Wrapper functions for returning nhs_data_elements all in one function
 
 These will be made available in the next release. 
