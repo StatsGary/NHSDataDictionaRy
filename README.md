@@ -28,6 +28,7 @@ To use the package, you can download it from CRAN, using the library command to 
 library(NHSDataDictionaRy)
 
 ```
+[Vignette](https://cran.r-project.org/web/packages/NHSDataDictionaRy/vignettes/introduction.html) available to reference the toolset.
 
 ## NHS Data Elements
 
