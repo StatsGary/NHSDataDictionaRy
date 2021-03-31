@@ -31,8 +31,11 @@ To install the NHSDataDictionaRy from CRAN see hereunder:
 
 To install the package from GitHub use the below:
 
+``` r
+#install.packages("remotes")
+remotes::install_github("https://github.com/StatsGary/NHSDataDictionaRy")
 
-
+```
 ## Using the package
 
 To use the package, you can download it from CRAN, using the library command to attach to your package:
