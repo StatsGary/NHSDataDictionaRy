@@ -8,6 +8,7 @@
    [![CRAN status](https://www.r-pkg.org/badges/version/NHSDataDictionaRy)](https://CRAN.R-project.org/package=NHSDataDictionaRy)
   <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
   [![](https://cranlogs.r-pkg.org/badges/NHSDataDictionaRy)](https://cran.r-project.org/package=NHSDataDictionaRy)
+  ![GitHub last commit](https://img.shields.io/github/last-commit/StatsGary/NHSDataDictionaRy)
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
   
