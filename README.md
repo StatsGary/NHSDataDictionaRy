@@ -7,6 +7,7 @@
  [![Build Status](https://travis-ci.com/StatsGary/NHSDataDictionaRy.svg?token=qEbF4fyFyqZQw11E4C2x&branch=master)](https://travis-ci.com/StatsGary/NHSDataDictionaRy)
    [![CRAN status](https://www.r-pkg.org/badges/version/NHSDataDictionaRy)](https://CRAN.R-project.org/package=NHSDataDictionaRy)
   <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+  [![](https://cranlogs.r-pkg.org/badges/NHSDataDictionaRy)](https://cran.r-project.org/package=NHSDataDictionaRy)
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
   
