@@ -1,6 +1,6 @@
 
 
-# NHSDataDictionaRy <img src="man/figures/logobgr.png" width="160px" align="right" />
+# NHSDataDictionaRy <a href = "https://hutsons-hacks.info/"><img src="man/figures/logobgr.png" width="160px" align="right"/></a>
 
   <!-- badges: start -->
  ![R-CMD-check](https://github.com/StatsGary/NHSDataDictionaRy/workflows/R-CMD-check/badge.svg)
