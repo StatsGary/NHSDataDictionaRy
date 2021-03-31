@@ -18,28 +18,42 @@
 #'
 #
 scrapeR <- function(url, xpath, ...){
-  xpath <- xpath
-  website <- xml2::read_html(url)
-  simple_lookup_table_scraped <- website %>%
-    rvest::html_nodes(xpath=xpath) %>%
-    rvest::html_table() %>%
-    purrr::pluck(1)
+  tryCatch(
+        expr = {
+          xpath <- xpath
+          url <- url
+          content <- url %>%
+            httr::GET(config = httr::config(ssl_verifypeer= FALSE))
+          website <- xml2::read_html(content)
+
+          simple_lookup_table_scraped <- website %>%
+            rvest::html_nodes(xpath=xpath) %>%
+            rvest::html_table() %>%
+            purrr::pluck(1)
 
 
-  if (length(simple_lookup_table_scraped) > 0){
-    simple_lookup_table_scraped <- simple_lookup_table_scraped
-    simple_lookup_table_scraped <- as.data.frame(apply(simple_lookup_table_scraped, 2, function(x) gsub('\\s+', ' ', x)))
-      # apply(., 2, function(x) gsub('\\s+', ' ', x)) %>%
-  } else{
-    warning(paste0("HTML Table does not exist for this URL.\n",
-                "Check the URL online at:\n", url,".", "\n"))
+          if (length(simple_lookup_table_scraped) > 0){
+            simple_lookup_table_scraped <- simple_lookup_table_scraped
+            simple_lookup_table_scraped <- as.data.frame(apply(simple_lookup_table_scraped, 2, function(x) gsub('\\s+', ' ', x)))
+            # apply(., 2, function(x) gsub('\\s+', ' ', x)) %>%
+          } else{
+            message(paste0("HTML Table does not exist for this URL.\n",
+                           "Check the URL online at:\n", url,".", "\n"))
 
-  }
+          }
 
-  invisible(simple_lookup_table_scraped)
+          return(simple_lookup_table_scraped)
+
+    },
+    error = function(e){
+
+          message(paste("Please make sure url or xpath are correctly specified.", as.character(e)))
+
+
+    }
+
+  )
 
 }
-
-
 
 

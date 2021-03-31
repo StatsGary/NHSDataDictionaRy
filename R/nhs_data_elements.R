@@ -9,6 +9,7 @@
 #' @include linkScrapeR.R
 #' @importFrom rvest html_nodes html_table html_text
 #' @importFrom dplyr tibble filter
+#' @importFrom httr GET config
 #' @importFrom magrittr %>%
 #' @importFrom stringr str_detect str_locate
 #' @return A tibble (class data frame) with the results of scraping the NHS Data Dictionary website for the data elements look ups, if no return this will produce an appropriate informational message.
@@ -29,6 +30,8 @@
 nhs_data_elements <- function(){
   link_name <- NULL
   mainweb <- "https://datadictionary.nhs.uk/data_elements_overview.html#dataElement_overview"
+
+
   list_links <- NHSDataDictionaRy::linkScrapeR(mainweb) #Returns the results of the linkScraperR
 
   if(nrow(list_links) <1){

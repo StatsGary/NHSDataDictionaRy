@@ -1,7 +1,7 @@
 Package: NHSDataDictionaRy
 Type: Package
 Title: NHS Data Dictionary Toolset for NHS Lookups
-Version: 1.2.2
+Version: 1.2.3
 Authors@R: c(
           person("Gary", "Hutson", , "g.hutson@nhs.net", c("aut", "cre")),
           person("Calum", "Polwart", , "calum.polwart@nhs.net", "aut")
@@ -23,7 +23,8 @@ Imports:
     rvest,
     stringr,
     purrr, 
-    tibble
+    tibble, 
+    httr
 Collate: 
     'left_xl.R'
     'len_xl.R'

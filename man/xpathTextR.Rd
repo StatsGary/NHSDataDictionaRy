@@ -4,12 +4,14 @@
 \alias{xpathTextR}
 \title{xpathTextR function}
 \usage{
-xpathTextR(url, xpath)
+xpathTextR(url, xpath, ssl_needed = FALSE)
 }
 \arguments{
 \item{url}{The link for the website}
 
 \item{xpath}{The xpath string derived by using the Inspect functionality in a web browser.}
+
+\item{ssl_needed}{Default - FALSE - Boolean to indicate whether to need a SSL certificate}
 }
 \value{
 A list with the results of scraping the specific xpath element

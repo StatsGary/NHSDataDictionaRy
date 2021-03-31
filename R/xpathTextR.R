@@ -5,6 +5,7 @@
 #'
 #' @param url The link for the website
 #' @param xpath The xpath string derived by using the Inspect functionality in a web browser.
+#' @param ssl_needed Default - FALSE - Boolean to indicate whether to need a SSL certificate
 #' @importFrom rvest html_nodes html_table html_text
 #' @importFrom magrittr %>%
 #' @importFrom xml2 read_html
@@ -21,20 +22,32 @@
 #'
 #'
 #'
-xpathTextR <- function(url, xpath){
-  xpath <- xpath
-  website <- xml2::read_html(url)
-  results <- website %>%
-    rvest::html_nodes(xpath=xpath) %>%
-    rvest::html_text()
+xpathTextR <- function(url, xpath, ssl_needed = FALSE){
 
-  return(list(result = results,
-              website_passed = url,
-              xpath_passed = xpath,
-              html_node_result = website,
-              datetime_access = Sys.time(),
-              person_accessed = paste0(toupper(Sys.getenv("USERNAME")), " - ", Sys.getenv("USERDOMAIN")))
+  tryCatch(
+    expr = {
+      xpath <- xpath
+      content <- url %>%
+        httr::GET(config = httr::config(ssl_verifypeer= ssl_needed))
+      website <- xml2::read_html(content)
+      results <- website %>%
+        rvest::html_nodes(xpath=xpath) %>%
+        rvest::html_text()
+
+      return(list(result = results,
+                  website_passed = url,
+                  xpath_passed = xpath,
+                  html_node_result = website,
+                  datetime_access = Sys.time(),
+                  person_accessed = paste0(toupper(Sys.getenv("USERNAME")), " - ", Sys.getenv("USERDOMAIN"))))
+
+    },
+      error = function(e){
+        message("Please make sure the url and xpath are specified correctly.")
+  }
   )
+
+
 }
 
 
