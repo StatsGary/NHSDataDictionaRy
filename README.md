@@ -1,6 +1,6 @@
 
 
-# NHSDataDictionaRy <img src="man/figures/logo.png" width="160px" align="right" />
+# NHSDataDictionaRy <img src="man/figures/logobgr.png" width="160px" align="right" />
 
   <!-- badges: start -->
  ![R-CMD-check](https://github.com/StatsGary/NHSDataDictionaRy/workflows/R-CMD-check/badge.svg)
