@@ -1,11 +1,11 @@
 
 
 # NHSDataDictionaRy <img src="man/figures/logo.png" width="160px" align="right" />
- <div>
+
   <!-- badges: start -->
  ![R-CMD-check](https://github.com/StatsGary/NHSDataDictionaRy/workflows/R-CMD-check/badge.svg)
  [![Build Status](https://travis-ci.com/StatsGary/NHSDataDictionaRy.svg?token=qEbF4fyFyqZQw11E4C2x&branch=master)](https://travis-ci.com/StatsGary/NHSDataDictionaRy)
-   [![CRAN status](https://www.r-pkg.org/badges/version/NHSDataDictionaRy)](https://CRAN.R-project.org/package=NHSDataDictionaRy) </div>
+   [![CRAN status](https://www.r-pkg.org/badges/version/NHSDataDictionaRy)](https://CRAN.R-project.org/package=NHSDataDictionaRy) 
   <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
   [![](https://cranlogs.r-pkg.org/badges/NHSDataDictionaRy)](https://cran.r-project.org/package=NHSDataDictionaRy)
   ![GitHub last commit](https://img.shields.io/github/last-commit/StatsGary/NHSDataDictionaRy)
