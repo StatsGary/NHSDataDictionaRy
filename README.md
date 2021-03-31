@@ -18,10 +18,20 @@ The goal of this package is to provide a common set of functions for working wit
 
 ## Installation
 
+### CRAN
+
+To install the NHSDataDictionaRy from CRAN see hereunder:
+
 ``` r
 # install.packages("NHSDataDictionaRy") # if not already installed
 
 ```
+
+### GitHub
+
+To install the package from GitHub use the below:
+
+
 
 ## Using the package
 
