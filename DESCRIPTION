@@ -12,6 +12,7 @@ Description: Providing a common set of simplified web scraping tools for working
     The benefits of having it in this package are that the lookups are the live lookups on the website and will not need to be maintained.
     This package was commissioned by the NHS-R community to provide this consistency of lookups.
     The OpenSafely lookups have now been added <https://codelists.opensafely.org/>.
+Depends: R (>= 3.6.0)
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: false

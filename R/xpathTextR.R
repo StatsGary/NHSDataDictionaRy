@@ -43,7 +43,7 @@ xpathTextR <- function(url, xpath, ssl_needed = FALSE){
 
     },
       error = function(e){
-        message("Please make sure the url and xpath are specified correctly.")
+        message("Please make sure the url and xpath are specified correctly and make sure you are connected to the internet. ")
   }
   )
 

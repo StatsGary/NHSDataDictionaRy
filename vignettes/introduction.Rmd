@@ -144,8 +144,8 @@ The scrapeR function is the workhorse, but the tableR wraps the results of the f
 
 ```{r tableR_example}
 # Filter by a specific lookup required
-reduced_tibble <- 
-  dplyr::filter(nhs_tibble, link_name == "ACTIVITY TREATMENT FUNCTION CODE")
+reduced_tibble <-
+dplyr::filter(nhs_tibble, link_name == "ACTIVITY TREATMENT FUNCTION CODE")
 
 #Use the tableR function to query the NHS Data Dictionary website and return the associate tibble
 

@@ -47,7 +47,7 @@ scrapeR <- function(url, xpath, ...){
     },
     error = function(e){
 
-          message(paste("Please make sure url or xpath are correctly specified.", as.character(e)))
+          message(paste("Please make sure url or xpath are correctly specified and make sure you are connected to the internet.", as.character(e)))
 
 
     }

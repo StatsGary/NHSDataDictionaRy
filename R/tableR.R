@@ -66,7 +66,8 @@ tableR <- function(url, xpath, title="Not Specified", add_zero_prefix = FALSE, .
     },
       error = function(e){
 
-        message("Please make sure url and xpath have been passed to function.")
+        print("Please make sure url and xpath have been passed to function and make sure you are connected to the internet.")
+        stop()
 
       })
 
