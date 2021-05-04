@@ -21,7 +21,6 @@
 #'
 
 tableR <- function(url, xpath, title="Not Specified", add_zero_prefix = FALSE, ...){
-
   tryCatch(
     expr = {
         if (is.null(url) | url == "" | length(url)==0){
@@ -43,8 +42,6 @@ tableR <- function(url, xpath, title="Not Specified", add_zero_prefix = FALSE, .
             Dict_Type = title,
             DttmExtracted = Sys.time()
           )
-
-
         } else{
           return_df <- dplyr::tibble(
             scrapeR(url, xpath, ...),
@@ -57,17 +54,16 @@ tableR <- function(url, xpath, title="Not Specified", add_zero_prefix = FALSE, .
           return_df$Code <- ifelse(nchar(return_df$Code) > 2, substr(return_df$Code, 2,nchar(return_df$Code)),
                                    return_df$Code)
 
-
-
         }
 
         return(return_df)
 
     },
       error = function(e){
+        return_df <- NULL
+        return(return_df)
+        message("Please make sure url and xpath have been passed to function and make sure you are connected to the internet.")
 
-        print("Please make sure url and xpath have been passed to function and make sure you are connected to the internet.")
-        stop()
 
       })
 

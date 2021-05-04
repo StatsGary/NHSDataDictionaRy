@@ -46,6 +46,7 @@ linkScrapeR <- function(url, SSL_needed = FALSE){
       error = function(e){
         message(cat
                 ("There has been an issue with the return.\n","Please check url passed to the function, or set the SSL_needed parameter to FALSE, as the sites SSL certificate may have expired. Additionally, please make sure you are connected to the internet."))
+
       }
 
     )

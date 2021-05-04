@@ -47,7 +47,6 @@ openSafely_listR <- function(list_name, version = "", ...){
       }
 
       if (right_xl(list_name, 1) == "/"){
-        #list_names should not have a trailing / - so remove it.
         list_name <- left_xl(list_name, len_xl(list_name) -1)
       }
 
@@ -55,8 +54,6 @@ openSafely_listR <- function(list_name, version = "", ...){
              xpath = '//*[@id="js-codelist-table"]', ...
       ) -> return_df
 
-      # Open safely table structure does not put the <th> inside a <tr> tag so the colums are given as X1, X2 etc.  Load them and
-      # fix it
       xml2::read_html(paste0("https://codelists.opensafely.org/codelist/", list_name, "/", version)) %>%
         rvest::html_nodes(xpath = '//*[@id="js-codelist-table"]//th') %>%
         rvest::html_text() -> header
@@ -68,8 +65,8 @@ openSafely_listR <- function(list_name, version = "", ...){
 
     },
     error = function(e){
-      message(cat("There is a problem connecting to the desired OpenSafely website.\n",
-                  "Please check your internet connection and try again!"))
+      return_df <- NULL
+      return(return_df)
     }
 
   )

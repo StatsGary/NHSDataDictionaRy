@@ -31,11 +31,9 @@ scrapeR <- function(url, xpath, ...){
             rvest::html_table() %>%
             purrr::pluck(1)
 
-
           if (length(simple_lookup_table_scraped) > 0){
             simple_lookup_table_scraped <- simple_lookup_table_scraped
             simple_lookup_table_scraped <- as.data.frame(apply(simple_lookup_table_scraped, 2, function(x) gsub('\\s+', ' ', x)))
-            # apply(., 2, function(x) gsub('\\s+', ' ', x)) %>%
           } else{
             message(paste0("HTML Table does not exist for this URL.\n",
                            "Check the URL online at:\n", url,".", "\n"))
