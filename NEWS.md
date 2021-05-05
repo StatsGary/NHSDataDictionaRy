@@ -14,4 +14,6 @@ Added OpenSafely function to package to allow OpenSafely data to be interrogated
 ## 1.2.3 - Added more advanced error handling for SSL certificates
 NHS Data Dictionary website had an unverified SSL certificate, which led to the package being rejected by CRAN. These additions have been fixed and it will be resubmitted to the site. 
 
+### 1.2.4 - Added nhs_table_findeR 
+Added this function for convenience, reduces the need to call three separate functions independently and can be used for rapid return of NHS Data Dictionary values, with the dependence on knowing the look up name.
 

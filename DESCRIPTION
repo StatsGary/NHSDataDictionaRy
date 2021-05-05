@@ -1,16 +1,17 @@
 Package: NHSDataDictionaRy
 Type: Package
 Title: NHS Data Dictionary Toolset for NHS Lookups
-Version: 1.2.3
+Version: 1.2.4
 Authors@R: c(
-          person("Gary", "Hutson", , "g.hutson@nhs.net", c("aut", "cre")),
-          person("Calum", "Polwart", , "calum.polwart@nhs.net", "aut")
+          person("Gary", "Hutson", , "g.hutson@nhs.net", c("aut", "cre"), comment = c(ORCID="0000-0003-3534-6143")),
+          person("Calum", "Polwart", , "calum.polwart@nhs.net", "aut"),
+          person("Tom", "Jemmett", ,"thomas.jemmett@nhs.net", "aut", comment = c(ORCID="0000-0002-6943-2990"))
           )
 Maintainer: Gary Hutson <g.hutson@nhs.net>
 Description: Providing a common set of simplified web scraping tools for working with the NHS Data Dictionary <https://datadictionary.nhs.uk/data_elements_overview.html>.
     The intended usage is to access the data elements section of the NHS Data Dictionary to access key lookups.
     The benefits of having it in this package are that the lookups are the live lookups on the website and will not need to be maintained.
-    This package was commissioned by the NHS-R community to provide this consistency of lookups.
+    This package was commissioned by the NHS-R community <https://nhsrcommunity.com/> to provide this consistency of lookups.
     The OpenSafely lookups have now been added <https://codelists.opensafely.org/>.
 License: MIT + file LICENSE
 Encoding: UTF-8
@@ -31,9 +32,10 @@ Collate:
     'linkScrapeR.R'
     'mid_xl.R'
     'nhs_data_elements.R'
-    'right_xl.R'
     'scrapeR.R'
     'tableR.R'
+    'nhs_table_findeR.R'
+    'right_xl.R'
     'openSafely_listR.R'
     'xpathTextR.R'
 Suggests: 
