@@ -15,7 +15,7 @@
 #' \itemize{
 #'   \item type - the OpenSafely type
 #'   \item id - the id for the OpenSafely element
-#'   \item bnf_code - British Nationa Formulary - NICE guidelines code
+#'   \item bnf_code - British National Formulary - NICE guidelines code
 #'   \item nm - medicine type, dosage and manufacturer
 #'   \item Dict_type - title specified for dictionary
 #'   \item DttmExtracted - the date and time the code set was extracted

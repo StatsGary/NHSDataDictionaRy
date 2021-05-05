@@ -198,7 +198,7 @@ if(is.null(national_codes)){
 The benefit of having it in an R package is that you can instantaneously have a lookup of the most relevant and up to date NHS lookups, replacing the need to have a massive data warehouse to capture this information. 
 
 ## nhs_table_findeR function
-This function allows you to perform the steps above in one consolidated function. This means that there is no need to call the nhs_data_elements() function and tableR functions separately, they are all nested in this nice convience function. This is how you would use it:
+This function allows you to perform the steps above in one consolidated function. This means that there is no need to call the nhs_data_elements() function and tableR functions separately, they are all nested in this nice convenience function. This is how you would use it:
 
 ```{r table_batch, message=TRUE, echo=TRUE}
 nhs_table_findeR("ACCOMMODATION STATUS CODE", title="Accomodation Status Code National Code Lookup")

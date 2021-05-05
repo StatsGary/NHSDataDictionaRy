@@ -7,7 +7,7 @@
 nhs_table_findeR(data_element_name, ...)
 }
 \arguments{
-\item{data_element_name}{The data element name from \url{https://datadictionary.nhs.uk/data_elements} for which to return the National table of elements, for example "ACCOMMODATION STATUS CODE"}
+\item{data_element_name}{The data element name from NHS Data Dictionation i.e. ACCOMMODATION STATUS CODE}
 
 \item{...}{Function forwarding to parent function to pass additional arguments to function (e.g. title, add_zero_prefix)}
 }
