@@ -12,7 +12,7 @@ Description: Providing a common set of simplified web scraping tools for working
     The intended usage is to access the data elements section of the NHS Data Dictionary to access key lookups.
     The benefits of having it in this package are that the lookups are the live lookups on the website and will not need to be maintained.
     This package was commissioned by the NHS-R community <https://nhsrcommunity.com/> to provide this consistency of lookups.
-    The OpenSafely lookups have now been added <https://codelists.opensafely.org/>.
+    The OpenSafely lookups have now been added <https://www.opencodelists.org/docs/>.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: false

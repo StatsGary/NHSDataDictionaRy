@@ -7,7 +7,7 @@
 openSafely_listR(list_name, version = "", ...)
 }
 \arguments{
-\item{list_name}{The code list ID from \url{https://codelists.opensafely.org/} for which to return the National table of elements, for example
+\item{list_name}{The code list ID from \url{https://www.opencodelists.org/} for which to return the National table of elements, for example
 "opensafely/ace-inhibitor-medications"}
 
 \item{version}{The version of the code list if not the most recent}
@@ -27,7 +27,7 @@ A tibble (class data.frame) output from the results of the web scrape
 }
 \description{
 This function uses the \code{\link{tableR}} parent function to return a table of elements, specifically from the OpenSafely Code List
-\url{https://codelists.opensafely.org/}
+\url{https://www.opencodelists.org/}
 }
 \examples{
 openSafely_listR("opensafely/ace-inhibitor-medications")
