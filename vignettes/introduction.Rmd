@@ -247,7 +247,7 @@ I have used the trim white space function to extract the result element from the
 
 ## Getting data from OpenSafely
 
-A contribution has been added to the package to allow for the OpenSafely data to be examined. To get the [OpenSafely data](https://codelists.opensafely.org/docs/) you can specify the code list required and this will pull it into a list. To do this follow the below example:
+A contribution has been added to the package to allow for the OpenSafely data to be examined. To get the [OpenSafely data](https://www.opencodelists.org/docs/) you can specify the code list required and this will pull it into a list. To do this follow the below example:
 
 ```{r opensafely}
 # Check if the connection has returned any values
