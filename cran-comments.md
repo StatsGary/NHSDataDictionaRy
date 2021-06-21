@@ -1,36 +1,29 @@
 ## Test environments
-* local R installation, R 4.0.3
-* ubuntu 16.04 (on travis-ci), R 4.0.3
-* win-builder (devel)
+* local windows 10, R 4.0.3
+* Windows, R devel 2020-09-09 r79174, on Win-builder
+* Ubuntu 16.04.6 LTS (on travis-ci), R 4.0.2
+
+* GitHub actions:
+  * Mac OS x 10.15.7, R 4.0.3
+  * Windows Server x64 2019, R 4.0.3
+  * Windows Server x64 latest, R 3.6.3
+  * Ubuntu 16.04.07, R-devel 2020-11-27 r79522
+  * Ubuntu 16.04.07, R 4.0.3
+  * Ubuntu 16.04.07, R 3.6.3
+  * Ubuntu 16.04.07, R 3.5.3
+  * Ubuntu 16.04.07, R 3.4.4
+  * Ubuntu 16.04.07, R 3.3.3
+
+* r-hub:
+  * Ubuntu Linux 16.04 LTS, R-release, GCC
+  * Fedora Linux, R-devel, clang, gfortran
+  * Windows Server 2008 R2 SP1, R-devel, 32/64 bit
 
 ## R CMD check results
+There were no ERRORs or WARNINGs.
 
-> checking for unstated dependencies in examples ... OK
-   WARNING
-  'qpdf' is needed for checks on size reduction of PDFs
-
-0 errors √ | 1 warning x | 0 notes √
-
-The warning disapears when checking on Travis and other environments. Known issue with this version of R and RStudio. 
+NOTE 'qpdf' is needed for checks on size reduction of PDFs. This is a known problem with R version and does not present on other testing platforms. 
 
 
-## Version control
-
-### 1.2.0 - Initial build release 
-To get the package out there and fixed to support change of structure of the NHS Data Dictionary website. This is fully working and details of how to use are in the vignette
-
-### 1.2.1 - Default codes xpath added to master NHS Data Dictionary lookup 
-The changes to the master site mean the default and national codes have been separated on the site, so this has been added to the master lookup and the changes pushed back to CRAN. 
-
-### 1.2.2 - Added OpenSafely to the package
-Added OpenSafely function to package to allow OpenSafely data to be interrogated.
-
-### 1.2.3 - Added more advanced error handling for SSL certificates
-NHS Data Dictionary website had an unverified SSL certificate, which led to the package being rejected by CRAN. These additions have been fixed and it will be resubmitted to the site. 
-
-### 1.2.4 - Added nhs_table_findeR 
-Added this function for convenience, reduces the need to call three separate functions independently and can be used for rapid return of NHS Data Dictionary values, with the dependence on knowing the look up name.
-
-
-
-
+## Downstream dependencies
+There are currently no downstream dependencies for this package to my knowledge.

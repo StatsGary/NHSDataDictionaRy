@@ -15,9 +15,10 @@
 #'   \item DttmExtracted - a date and time stamp
 #' }
 #' @examples
-#' nhs_table_findeR("ACCOMMODATION STATUS CODE", title="Accomodation Status")
-#' nhs_table_findeR("accommodation status code") #Changes case to match
 #' #Returns a tibble from tableR parent function
+#' nhs_table_findeR("ACCOMMODATION STATUS CODE", title="ACCOM_STATUS")
+#' nhs_table_findeR("accommodation status code") #Changes case to match
+
 #'
 #' @export
 #'

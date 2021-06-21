@@ -36,7 +36,7 @@ nhs_data_elements <- function(){
       list_links <- NHSDataDictionaRy::linkScrapeR(mainweb)
 
       if(length(list_links)==0){
-        print("The list links has not been successful on this occassion. There is an issue with the linkScrapeR function")
+        message("The list links has not been successful on this occassion.\n There is an issue with the linkScrapeR function, or access to the internet has been disconnected.")
         stop()
       }
 

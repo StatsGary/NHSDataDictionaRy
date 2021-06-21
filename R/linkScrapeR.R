@@ -19,12 +19,12 @@
 #'   \item link_name - the name of the link
 #'   \item url - the full url of the active href tag from HTML
 #' }
-#' @examples linkScrapeR("https://nhsrcommunity.com/")
+#' @examples linkScrapeR("https://www.datadictionary.nhs.uk/", FALSE)
 #' @export
 
 linkScrapeR <- function(url, SSL_needed = FALSE){
   tryCatch(
-      expr = {
+   expr = {
           url <- url
           content <- url %>%
             httr::GET(config = httr::config(ssl_verifypeer= SSL_needed))
@@ -43,11 +43,11 @@ linkScrapeR <- function(url, SSL_needed = FALSE){
             url = url_))
       },
 
-      error = function(e){
-        message(cat
-                ("There has been an issue with the return.\n","Please check url passed to the function, or set the SSL_needed parameter to FALSE, as the sites SSL certificate may have expired. Additionally, please make sure you are connected to the internet."))
+       error = function(e){
+         message(cat
+                 ("There has been an issue with the return.\n","Please check url passed to the function, or set the SSL_needed parameter to FALSE, as the sites SSL certificate may have expired. Additionally, please make sure you are connected to the internet."))
 
-      }
+       }
 
     )
 

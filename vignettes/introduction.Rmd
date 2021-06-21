@@ -19,7 +19,7 @@ knitr::opts_chunk$set(
 
 # Context
 
-This package has been commissioned by the NHS-R community and is intended to be used to web scrape the [NHS Data Dictionary website](https://datadictionary.nhs.uk/data_elements_overview.html#dataElement_overview) for useful lookup tables. The NHS-R community have been pivotal in getting this package off the ground. 
+This package has been commissioned by the NHS-R community and is intended to be used to web scrape the [NHS Data Dictionary website](https://datadictionary.nhs.uk/data_elements_overview.html#dataElement_overview) for useful look up tables. The NHS-R community have been pivotal in getting this package off the ground. 
 
 The package is maintained by [Gary Hutson - Head of Advanced Analytics at Arden and GEM Commissioning Support Unit](https://www.ardengemcsu.nhs.uk/) and to contact the maintainer directly you can navigate to this [site](https://hutsons-hacks.info/). 
 
@@ -119,7 +119,7 @@ This function can analyse a website and get all the current hyperlinks of a webs
 
 ```{r link_scrapeR}
 # Analyse all the links on a website
-website_url <- "https://nhsrcommunity.com/home/webinars/"
+website_url <- "https://hutsons-hacks.info/"
 results <- NHSDataDictionaRy::linkScrapeR(website_url)
 print(head(results, 20))
 

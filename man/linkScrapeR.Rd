@@ -28,5 +28,5 @@ Once the links have been scraped they will be outputted into a tibble for explor
 This can be used on any website to pull back the hyperlink content of a web page.
 }
 \examples{
-linkScrapeR("https://nhsrcommunity.com/")
+linkScrapeR("https://www.datadictionary.nhs.uk/", FALSE)
 }

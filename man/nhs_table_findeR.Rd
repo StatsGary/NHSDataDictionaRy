@@ -23,8 +23,8 @@ A tibble (class data.frame) output from the results of the web scrape
 This function uses the \code{\link{tableR}} parent function to return a table of elements, specifically from the NHS Data Dictionary
 }
 \examples{
-nhs_table_findeR("ACCOMMODATION STATUS CODE", title="Accomodation Status")
-nhs_table_findeR("accommodation status code") #Changes case to match
 #Returns a tibble from tableR parent function
+nhs_table_findeR("ACCOMMODATION STATUS CODE", title="ACCOM_STATUS")
+nhs_table_findeR("accommodation status code") #Changes case to match
 
 }
