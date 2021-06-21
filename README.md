@@ -50,15 +50,6 @@ library(NHSDataDictionaRy)
 
 When retrieving the current hyperlinks from the data elements page of R it is known that not all of these elements will have <strong>National Code</strong> tables. If a National Code table does not exist for the selected lookup table, then you will receive a message stating the lookup table requested does not exist and to try another lookup table. If you check this, you will see that the relevant data elements page of the NHS Data Dictionary does not contain that specific national codes table. 
 
-## Additional updates
-
-A new update has been added to the package to allow OpenSafely data to be intergated via the R lookup. 
-
-Updates are being worked on at the moment to include:
-- Wrapper functions for returning nhs_data_elements all in one function
-
-These will be made available in the next release. 
-
 ## Credits 
 
 This package has been funded by the NHS-R community and designed in conjunction with Arden and GEM CSU. Gary Hutson is the package maintainer and can advise on bug fixes and general functionality issues. 
