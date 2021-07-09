@@ -17,3 +17,6 @@ NHS Data Dictionary website had an unverified SSL certificate, which led to the 
 ### 1.2.4 - Added nhs_table_findeR 
 Added this function for convenience, reduces the need to call three separate functions independently and can be used for rapid return of NHS Data Dictionary values, with the dependence on knowing the look up name.
 
+### 1.2.5 - Change of maintainer email
+Changed the maintainer email.
+
