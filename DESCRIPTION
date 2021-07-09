@@ -3,7 +3,7 @@ Type: Package
 Title: NHS Data Dictionary Toolset for NHS Lookups
 Version: 1.2.4
 Authors@R: c(
-          person("Gary", "Hutson", , "g.hutson@nhs.net", c("aut", "cre"), comment = c(ORCID="0000-0003-3534-6143")),
+          person("Gary", "Hutson", , "hutsons-hacks@outlook.com", c("aut", "cre"), comment = c(ORCID="0000-0003-3534-6143")),
           person("Calum", "Polwart", , "calum.polwart@nhs.net", "aut"),
           person("Tom", "Jemmett", ,"thomas.jemmett@nhs.net", "aut", comment = c(ORCID="0000-0002-6943-2990"))
           )
