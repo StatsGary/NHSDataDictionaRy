@@ -11,6 +11,7 @@
   ![GitHub last commit](https://img.shields.io/github/last-commit/StatsGary/NHSDataDictionaRy)
   ![GitHub Repo stars](https://img.shields.io/github/stars/StatsGary/NHSDataDictionaRy?label=NHSDataDictionaRy%20Stars)
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![Downloads](https://cranlogs.r-pkg.org/badges/grand-total/NHSDataDictionaRy)](https://cran.r-project.org/package=NHSDataDictionaRy)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
   
   
